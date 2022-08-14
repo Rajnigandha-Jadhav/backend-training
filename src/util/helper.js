@@ -1,7 +1,10 @@
 const printDate = function() {
-    let currentDate = new Date()
-    currentDate = currentDate.getDate()
-    console.log('The current date is: '+currentDate)
+    let today = new Date();
+
+    let date = today.getDate();
+
+    console.log("Today is: "+ date);
+
 }
 
 const printMonth = function() {

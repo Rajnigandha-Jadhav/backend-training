@@ -7,7 +7,7 @@ const formatterModule = require('../validator/formatter')
 const helperModule = require('../util/helper')
 const router = express.Router();
 
-router.get('/test-me', function (req, res) {
+router.get('/piyusha', function (req, res) {
     console.log('My batch is', abc.name)
     abc.printName()
     loggerModule.printInfo()
@@ -20,7 +20,7 @@ router.get('/test-me', function (req, res) {
     let weekdend = ['Saturday','Sunday','Monday']
     let result = _.first(weekdend, 2)
     console.log('Unserscore example resultr is ',result)
-    res.send('My second ever api!')
+    res.send('My name is rajnigandha')
 });
 
 
