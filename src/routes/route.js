@@ -1,64 +1,8 @@
 const express = require('express');
-const _ = require('underscore');
-const lodash = require('lodash');
-const router = express.Router(); 
-const app = express();
+const router = express.Router();
+//const app = express();
 
-/*const abc = require('../introduction/intro')
-const loggerModule = require('../logger/logger.js')
-const formatterModule = require('../validator/formatter') 
-const helperModule = require('../util/helper')
- 
-
-router.get('/piyusha', function (req, res) {
-    console.log('My batch is', abc.name)
-    abc.printName()
-    loggerModule.printInfo()
-    formatterModule.trimMyString()
-    formatterModule.getUpperCaseString()
-    formatterModule.changetoLowerCase()
-    helperModule.getTodaysDate()
-    helperModule.getCurrentMonth()
-    helperModule.printBatchDetails()
-    let weekdend = ['Saturday','Sunday','Monday']
-    let result = _.first(weekdend, 2)
-    console.log('Unserscore example resultr is ',result)
-    res.send('My name is rajnigandha')
-}); */
-
-router.get('/test-me', function(req, res){
-    const months=['jan','fab','mar','apr','may','jun','jul','aug','sep','oct','nov','dec']
-    let result=lodash.chunk(months,3)
-    //res.send(result);
-    console.log(result);
-    const array=[1,3,5,7,9,11,13,15,17,19]
-      let tail=lodash.tail(array)
-    console.log(tail)
-    //res.send(tail)
-   const duplicate=[[1,2,3,4,5],[2,7,3,8,9],[9,0,4,2,3],[1,3,2,5,10],[1,34,2,5,11]]
-   const [a,b,c,d,e]=duplicate
-   let sam=lodash.union(a,b,c,d,e)
-   console.log(sam)
-  // res.send(sam)
-    const oarray=[['horror','The Shining'],['drama','Titanic'],['thriller','Shutter Island'],['fantasy','Pans Labyrinth']]
-   let object=lodash.fromPairs(oarray)
-   console.log(object)
-    res.send(object)
-})
-
-
-
-router.get('/test-you', function(req, res){
-    res.send('This is the second routes implementation')
-})
-
-router.get('/give-me-students-data',function(req, res){
-
-})
-module.exports = router;
-// adding this comment for no reason
-
-app.get('/sol1',function(req, res){
+/*app.get('/sol1',function(req, res){
     const array=[1,2,3,5,6,7]
     let sum=0
     for (i=0;i<array.length;i++){
@@ -84,4 +28,101 @@ app.get('/sol1',function(req, res){
     res.send({ data: missingNumber  }  )
   
   })
-  module.exports=app;
+  module.exports=app;*/
+/*let players =
+   [
+       {
+           "name": "manish",
+           "dob": "1/1/1995",
+           "gender": "male",
+           "city": "jalandhar",
+           "sports": [
+               "swimming"
+           ]
+       },
+       {
+           "name": "gopal",
+           "dob": "1/09/1995",
+           "gender": "male",
+           "city": "delhi",
+           "sports": [
+               "soccer"
+           ]
+       },
+       {
+           "name": "lokesh",
+           "dob": "1/1/1990",
+           "gender": "male",
+           "city": "mumbai",
+           "sports": [
+               "soccer"
+           ]}
+          ]
+  
+   router.post('/players', function (req, res) {
+    let ele= req.body
+  for(i=0;i<players.length;i++){
+    let object=players[i]
+    if(object.name==ele.name){
+     return res.send("This player is exist")
+    }
+  }
+    players.push(ele)
+    res.send(  { data: players , status: true }  )
+})*/
+
+
+
+let persons =[
+    {
+        name: "PK",
+        age: 10,
+        votingStatus: false
+        
+    },
+    {
+        name: "SK",
+        age: 20,
+        votingStatus: false
+        
+    },
+    {
+        name: "AA",
+        age: 70,
+        votingStatus: false
+        
+    },
+    {
+        name: "SC",
+        age: 5,
+        votingStatus: false
+        
+    },
+    {
+        name: "HO",
+        age: 40,
+        votingStatus: false
+        
+    },
+    {
+        name: "raj",
+        age: 18,
+        votingStatus: false
+        
+    }
+]
+router.post('/person',function(req,res){
+        let votingage=req.query.age
+        let newperson=persons.filter(ele=>{if(ele.age>=votingage){
+            return ele.votingStatus=true
+        }})
+        
+console.log(newperson)
+res.send(newperson)
+
+}) 
+module.exports = router;
+
+
+
+
