@@ -7,12 +7,21 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//let today= new Date() 
+//app.use(function(req, res, next) {
+   // console.log(today.getFullYear(), "-", today.getMonth()+1, "-", today.getDate(), "  ", today.getHours(), ":", today.getMinutes(), ":", today.getSeconds(), req.socket.localAddress, req.originalUrl)
+    //next()
+//})
 
-mongoose.connect("mongodb+srv://panigrahisameer_200:iklsSoxrtvpy4JOK@cluster0.kyd9m93.mongodb.net/Sameer6345-DB", {
+mongoose.connect("mongodb+srv://Rajnigandha-2402:LG1AyAT8nJB77pPC@cluster0.t7g9trm.mongodb.net/Piyusha-DB?retryWrites=true&w=majority", {
     useNewUrlParser: true
 })
 .then( () => console.log("MongoDb is connected"))
 .catch ( err => console.log(err) )
+
+
+ 
+
 
 app.use('/', route);
 
