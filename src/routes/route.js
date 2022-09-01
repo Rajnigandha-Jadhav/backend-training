@@ -17,6 +17,8 @@ const authMiddleware= require("../middlewares/auth")
 const authenticatedModel= require("../models/authenticationUserModel");
 const authenticationUserModel = require('../models/authenticationUserModel');
 
+const covid = require("../controllers/cowinController")
+
 
 
 router.post("/createBook", bookController.bookCreate)
@@ -54,6 +56,12 @@ router.get("/userData/:id", async(req,res) => {
     }
     res.send(user)
 })
+
+
+router.get("/getdistrict", covid.getDistrict)
+router.get("/getWeather", covid.getLondonWeather)
+router.get("/sort", covid.sortCities)
+router.get("/meme", covid.Meme)
 
 
 module.exports = router;
